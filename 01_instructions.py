@@ -18,7 +18,7 @@ def instructions():
 
     statement_generator("Instructions/information", "-")
     print()
-    print("Please choose amount and the unit of measurement")
+    print("Please choose a unit to convert from and a unit to convert to")
     print()
     print("Complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit.")
     print()

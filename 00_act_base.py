@@ -23,9 +23,9 @@ def instructions():
     print()
     print("Please choose a unit to convert from and a unit to convert to")
     print()
-    print("This program converts measurments of time, mass, and distance")
+    print("This program converts measurements of time, mass, and distance")
     print()
-    print("Complete as many calculaations as necessary, pressing <enter> at the end of each calculation or any key to quit")
+    print("Complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit")
     print()
     return ""
 
@@ -67,17 +67,17 @@ def user_choice():
         # ask user for choice and change response to lowercase
         response = input("measurement (weight / distance / time): ").lower()
 
-        # if they choose "t" or "text" or "txt", return "text"
+        # if they choose "wt" or "w" or "weight", return "weight"
         weight_ok = ["weight", "w", "wt"]
         if response in weight_ok:
             return "weight"
 
-         # if they choose "int" or "interger", return "interger"
+         # if they choose "distance" or "length" or "d" or "dist", return "distance"
         distance_ok = ["distance", "length", "d", "dist"]
         if response in distance_ok:
             return "distance"
 
-         # if they choose "image" or "p" or "img", return "image"
+         # if they choose "time" or "t" return "time"
         time_ok = ["time", "t"]
         if response in time_ok:
             return "time"
@@ -92,50 +92,15 @@ def ask_num():
     user_num = input("Please enter the integer (more than zero) you want to convert: ")
     
     
-# Dictionaries
-
-
-weight_dict = {
-    "mg": 1000,
-    "g": 1, 
-    "kg": 0.001,
-    "t": 0.000001
-    }
-
-distance_dict = {
-    "cm": 100,
-    "m": 1, 
-    "km":0.001,
-    "mm": 1000
-    }
-
-time_dict = {
-    "sec": 60,
-    "min": 1, 
-    "hour": 0.6,
-    "day": 0.000694444,
-    "ms": 60000
-    }
 
 
 def weight_conv():
     
     # Ask user what to convert from and to
-    
+
     weight_from = input("Enter unit to convert from (mg, g, kg, t): ")
-    print()
     weight_to = input("Enter unit to convert to (mg, g, kg, t): ")
-    print()
 
-    if weight_from in weight_dict:
-        # check if it's a key (ie: a colour in our dictionary)
-
-            # look up the value associated with the key
-            times_by = weight_dict[]
-
-            weight_answer = weight_from * times_by 
-            # output the value and the key (eg: the sky is blue)
-            print("{}".format(weight_answer))
         
 
 
@@ -156,7 +121,6 @@ statement_generator("Conversion Calculator for Weight, Distance & Time", "*")
 
 # Display instructions if user has not used the progra before
 first_time = input("Press <enter> to see the instructions or any key to continue ")
-print()
 
 if first_time == "":
     instructions()
@@ -181,7 +145,3 @@ while keep_going == "":
     # For text, ask for a string
     else:
         time_conv()
-
-print()
-keep_going = input("Press <enter> to continue or any key to quit ")
-print()
