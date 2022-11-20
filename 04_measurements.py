@@ -35,5 +35,5 @@ keep_going = ""
 while keep_going == "": 
     data_type = user_choice() 
     print("You chose",  data_type)
-
     print()
+    

@@ -20,9 +20,12 @@ def instructions():
     print()
     print("Please choose a unit to convert from and a unit to convert to")
     print()
-    print("Complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit.")
+    print("This program converts measurements of mass, time, and distance")
+    print()
+    print("Complete as many calculations as necessary by pressing <enter> at the end of each calculation or any key to quit")
     print()
     return ""
 
 # Main routine
 instructions()
+

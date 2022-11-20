@@ -1,92 +1,27 @@
-from time import sleep
-# Functions go here
+def domain_check():
 
-def statement_generator(text, decoration):
+    error = "Please enter weight / distance or time"
 
-    # Make string with five characters 
-    ends = decoration * 5
+    # loop start here
+    while True:
 
-    # add decoration to start and end of statement 
-    statement = "{} {} {}".format(ends, text, ends)
+        response = input("What domain? ").lower()
 
-    print()
-    print(statement)
-    print()
+        if response == "time" or response == "t":
+            return ("time")
 
-    return ""
+        elif response == "weight" or response == "w":
+            return ("weight")
 
-
-# displays instructions / information
-def instructions():
-
-    statement_generator("Instructions / Information", "=")
-    print()
-    print("Please choose a unit to convert from and a unit to convert to")
-    print()
-    print("This program converts measurments of time, mass, and distance")
-    print()
-    print("Complete as many calculaations as necessary, pressing <enter> at the end of each calculation or any key to quit")
-    print()
-    return ""
-
-
-# checks input is a number more than given value
-def num_check(question):
-    # Check that users enter a number that is more than zero
-    valid = False
-    while not valid:
-        print()
-        error = "please enter an integer that is more than zero"
-
-        try:
-        
-            low_num = 1
-            
-            # Ask user to enter a number
-            response = int(input(question))
-            
-            # checks number is more than zero or under 200
-            if low_num <= response:
-                return response
-
-            # outputs error if input is invalid
-            else: 
-                print(error)
-                print()
-
-        except ValueError:
+        elif response == "distance" or response == "d" or response == "length" or response == "l":
+            return("distance")
+        else:
             print(error)
 
+# main routine``
 
-# Checks user coice is 'weight', 'distance' or 'time'
-def user_choice():
-
-    valid = False
-    while not valid:
-        
-        # ask user for choice and change response to lowercase
-        response = input("measurement (weight / distance / time): ").lower()
-
-        # if they choose "t" or "text" or "txt", return "text"
-        weight_ok = ["weight", "w", "wt"]
-        if response in weight_ok:
-            return "weight"
-
-         # if they choose "int" or "interger", return "interger"
-        distance_ok = ["distance", "length", "d", "dist"]
-        if response in distance_ok:
-            return "distance"
-
-         # if they choose "image" or "p" or "img", return "image"
-        time_ok = ["time", "t"]
-        if response in time_ok:
-            return "time"
-
-
-        else: 
-            print("Please choose a valid measurment!")
-            print()
-
+domain = domain_check()
+print("you chose", domain)
 def ask_num():
 
     user_num = input("Please enter the integer (more than zero) you want to convert: ")
@@ -99,7 +34,6 @@ weight_dict = {
     "mg": 1000,
     "g": 1, 
     "kg": 0.001,
-    "t": 0.000001
     }
 
 distance_dict = {
@@ -127,61 +61,75 @@ def weight_conv():
     weight_to = input("Enter unit to convert to (mg, g, kg, t): ")
     print()
 
+    weight_amount = float(input("Please enter the amount you want to convert: "))
+
     if weight_from in weight_dict:
-        # check if it's a key (ie: a colour in our dictionary)
+        
 
-            # look up the value associated with the key
-            times_by = weight_dict[]
+            # find the answer
+            divide_by = weight_dict[weight_from]
 
-            weight_answer = weight_from * times_by 
-            # output the value and the key (eg: the sky is blue)
-            print("{}".format(weight_answer))
+            part_1 = weight_amount / divide_by 
+            factor_1 = weight_dict[weight_to]
+
+            weight_answer = part_1 * factor_1
+
+            # output the value and the key
+            
+            print("{}{} = {}{}".format(weight_amount, weight_from, weight_answer, weight_to))
         
 
 
 def distance_conv():
 
-    pass
+    # Ask user what to convert from and to
+    
+    distance_from = input("Enter unit to convert from (mm, cm, m, km): ")
+    print()
+    distance_to = input("Enter unit to convert to (mm, cm, m, km): ")
+    print()
+
+    distance_amount = float(input("Please enter the amount you want to convert: "))
+
+    if distance_from in distance_dict:
+        
+
+            # find the answer
+            divide_by = distance_dict[distance_from]
+
+            part_1 = distance_amount / divide_by 
+            factor_1 = distance_dict[distance_to]
+
+            distance_answer = part_1 * factor_1
+
+            # output the value and the key
+            
+            print("{}{} = {}{}".format(distance_amount, distance_from, distance_answer, distance_to))
 
 
 def time_conv():
 
-    pass
-
-
-# Main Routine goes here
-
-# Heading
-statement_generator("Conversion Calculator for Weight, Distance & Time", "*")
-
-# Display instructions if user has not used the progra before
-first_time = input("Press <enter> to see the instructions or any key to continue ")
-print()
-
-if first_time == "":
-    instructions()
-# Loop to allow multiple calulations per session
-keep_going = ""
-while keep_going == "":
-
-    # Ask the user for the file type
-    data_type = user_choice()
-    print("You chose", data_type)
-
-     # For integers, ask for integer
-        # (must be an integer more than / equal to 0)
-    if data_type =="weight":
-        weight_conv()
+    # Ask user what to convert from and to
     
-    # For images, ask for width and height
-    # (must be integers more than / equal to 1)
-    elif data_type =="distance":
-        distance_conv()
+    time_from = input("Enter unit to convert from (mm, cm, m, km): ")
+    print()
+    time_to = input("Enter unit to convert to (mm, cm, m, km): ")
+    print()
 
-    # For text, ask for a string
-    else:
-        time_conv()
+    time_amount = float(input("Please enter the amount you want to convert: "))
 
-print()
-keep_going = input("Press <enter> to continue or any key to quit ")
-print()
+    if time_from in time_dict:
+        
+
+            # find the answer
+            divide_by = time_dict[time_from]
+
+            part_1 = time_amount / divide_by 
+            factor_1 = time_dict[time_to]
+
+            time_answer = part_1 * factor_1
+
+            # output the value and the key
+            
+            print("{}{} = {}{}".format(time_amount, time_from, time_answer, time_to))
+
