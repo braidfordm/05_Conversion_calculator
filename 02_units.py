@@ -37,18 +37,17 @@ weight_dict = {
     }
 
 distance_dict = {
+    "mm": 1000,
     "cm": 100,
     "m": 1, 
-    "km":0.001,
-    "mm": 1000
+    "km":0.001
     }
 
 time_dict = {
+    "ms": 60000,
     "sec": 60,
     "min": 1, 
-    "hour": 0.6,
-    "day": 0.000694444,
-    "ms": 60000
+    "hour": 0.6
     }
 
 
@@ -74,7 +73,7 @@ def weight_conv():
 
             weight_answer = part_1 * factor_1
 
-            # output the value and the key
+            # output the value and the keyz
             
             print("{}{} = {}{}".format(weight_amount, weight_from, weight_answer, weight_to))
         
