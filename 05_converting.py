@@ -41,4 +41,6 @@ def unit_checker():
 # main routine
 
 conversion = conversion_checker()
-print("you converting from", conversion "to" unit_checker)
+print("you converting from", conversion)
+unit = unit_checker()
+print("to", unit)
